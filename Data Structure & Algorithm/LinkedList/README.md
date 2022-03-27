@@ -133,3 +133,54 @@ Firstly for we check of the given index is valid, then we can have 3 scenarios.
     previous.next=node
   }
 ```
+
+Now we want to get value at specific index. In linkedlist we only have head. so we have to iterate from head to specific index.
+
+```js
+// Get at index
+  getAt(index) {
+    let current = this.head;
+    let count = 0;
+    while (current) {
+      if (count === index) {
+        console.log(current.data);
+      }
+      count++;
+      current = current.next;
+    }
+    return null;
+  }
+
+
+  // Remove at index
+  removeAt(index) {
+    if (index > 0 && index > this.size) {
+      return;
+    }
+
+    let current = this.head;
+    let previous;
+    let count = 0;
+
+    // Remove first
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      while (count < index) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
+
+      previous.next = current.next;
+    }
+
+    this.size--;
+  }
+
+  // Clear list
+  clearList() {
+    this.head = null;
+    this.size = 0;
+  }
+```
