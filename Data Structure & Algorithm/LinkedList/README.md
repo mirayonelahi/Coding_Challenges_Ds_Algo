@@ -31,6 +31,7 @@ If we want to insert data at the beginning of the linkedlist, we just need to ad
  // Insert at the beginning of the list
   insertAtBeginning(data) {
     this.head = new Node(data, this.head);
+    this.size++;
   }
 ```
 
@@ -48,3 +49,87 @@ Now if we want to print all the values from linkedlist. we only need the head to
 ```
 
 Now we want to insert a value at the end of a linkedlist. Let's think first how can we approach for this. So we can start iterating from the head and go to the last node. Then we connect the last node with our new data and we connect null for next of our new data.
+
+```js
+// insert at end of the list
+  insertAtEnd(data) {
+    let node = new Node(data);
+    let current;
+    // check if the head is empty then add the node to head
+    if (!this.head) {
+      this.head = node;
+    }
+    // if head not empty we need to iterate to the tail
+    else {
+      current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.size++;
+  }
+```
+
+So far we created our basic structure and add to linkedlist both from start and end.
+Now, lets add data to any specific index in linked list.
+
+Before jumping into coding we can think of the solution.
+Firstly for we check of the given index is valid, then we can have 3 scenarios.
+
+- It can add at beginning
+
+  - we change the head and link it
+  - the same way we have done in `insertAtBegining()`
+
+- It can add inside or end
+
+```js
+  // insert at end of the list
+  insertAtEnd(data) {
+    let node = new Node(data);
+    let current;
+    // check if the head is empty then add the node to head
+    if (!this.head) {
+      this.head = node;
+    }
+    // if head not empty we need to iterate to the tail
+    else {
+      current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.size++;
+  }
+
+  //insert at specific index
+  insertAt(data, index) {
+    // check the edge cases first if index is out of range
+    if (index < 0 && index > this.size) {
+      return;
+    }
+
+    //check if its first index then we need to add head
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    const node = new Node(data);
+    let current, previous;
+
+    // set current to first
+    current = this.head;
+    let count = 0;
+
+    while (count < index) {
+      previous = current; // Node before index
+      count++;
+      current = current.next; // Node after index
+    }
+    node.next = current
+    previous.next=node
+  }
+```
