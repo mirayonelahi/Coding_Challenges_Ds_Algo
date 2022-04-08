@@ -145,3 +145,15 @@ const memoizedTimes10 = memoize(times10);
 console.log("Task 4 calculated value:", memoizedTimes10(9)); // calculated
 console.log("Task 4 cached value:", memoizedTimes10(9)); // cached
 ```
+
+## Recursion in js
+
+- Recursion is a technique that allows a function to call itself.
+
+- Recursion is a technique that allows a function to call itself.
+
+- Recursion is a technique that allows a function to call itself.
+
+- ooops!! we forget to add a base case and here we were in infinite loop.
+
+- recursion sounds simple but it is a bit tricky when it comes to think of a reclusive problem.
