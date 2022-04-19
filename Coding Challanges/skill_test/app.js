@@ -39,3 +39,76 @@
 // }
 
 // console.log(formatDate("12/3/2014"));
+
+// /**
+//  * sum
+//  * ----
+//  * returns a Number representing the sum of all the values in the first parameter
+//  * @param {[Number]} values - Array of values to sum
+//  */
+// const sum = (values) => {
+
+//     return values.reduce((acc, val) => acc + val, 0);
+
+// };
+
+/**
+ * capitalize
+ * ----
+ * Takes a string and capitalizes the *first letter* in the string.
+
+ * @param {String} str - String to capitalize
+ */
+//skip special characters
+// skip numbers
+// const capitalizeFirstLetter = (str) => {
+//     let firstLetter = str.charAt(0);
+//    for(let i = 1; i < str.length; i++) {
+//        if(str.charAt(i) === ' ') {
+//            firstLetter += str.charAt(i + 1).toUpperCase();
+//            i++;
+//        } else {
+//            firstLetter += str.charAt(i);
+//        }
+//    }
+//     return firstLetter;
+// };
+
+// const first = () => console.log("first");
+
+// const second = () =>
+//   setTimeout(() => {
+//     console.log("second");
+//   }, 1000);
+// const third = () => console.log("third");
+
+// second();
+// first();
+// third();
+
+//takes an array of 3D vector and returns the shortest one
+
+// function findShortest(vectors) {
+//   console.log(vectors.length);
+//   let obj = {};
+//   let min = Infinity;
+//   for (let i = 0; i < vectors.length; i++) {
+//     let firstval = vectors[i][0];
+//     console.log(firstval);
+//       min = Math.min(min, firstval);
+//      if(min === firstval) {
+//        obj[min] = vectors[i];
+//      }
+//   }
+//   console.log(min,obj);
+//   return obj[min];
+// }
+
+// var vectors = [
+//   [1, 1, 1],
+//   [0, 0, 0],
+//   [3, 3, 3],
+//   [4, 4, 4],
+// ];
+// var shortest = findShortest(vectors);
+// console.log(shortest);
