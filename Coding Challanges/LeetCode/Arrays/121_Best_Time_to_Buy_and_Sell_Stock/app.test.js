@@ -43,12 +43,12 @@ var maxProfitTwoPointer = function (p) {
   return maxGlobal;
 };
 
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(maxProfitTwoPointer([7, 1, 5, 3, 6, 4]));
 
 test("lowest buy to highest sell", () => {
-  expect(maxProfit([7, 1, 5, 3, 6, 4])).toStrictEqual(5);
+  expect(maxProfitTwoPointer([7, 1, 5, 3, 6, 4])).toStrictEqual(5);
 });
 
 test("lowest buy to highest sell", () => {
-  expect(maxProfit([1, 2])).toStrictEqual(1);
+  expect(maxProfitTwoPointer([1, 2])).toStrictEqual(1);
 });
