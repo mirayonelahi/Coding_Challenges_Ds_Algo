@@ -19,6 +19,23 @@ function rotLeft(a, d) {
   return a;
 }
 
+function jumpingOnClouds(c) {
+  // Write your code here
+  let i = 0;
+  let count = 0;
+  while (i < c.length - 1) {
+    if (i + 2 == c.length || c[i + 2] == 1) {
+      count++;
+      i++;
+    } else {
+      count++;
+      i += 2;
+    }
+  }
+
+  return count;
+}
+
 //new year chaos
 
 function minimumBribes(q) {
