@@ -71,3 +71,30 @@ function birthdayCakeCandles(candles) {
   }
   return count;
 }
+
+function checkMagazine(magazine, note) {
+  // Write your code here
+  magazine = magazine.split(" ");
+  note = note.split(" ");
+  const obj = {};
+
+  for (let i of magazine) {
+    obj[i] = obj[i] + 1 || 1;
+  }
+
+  for (let i of note) {
+    if (obj[i] == undefined) {
+      console.log("No");
+      return;
+    }
+    obj[i]--;
+
+    if (obj[i] === 0) {
+      delete obj[i];
+    }
+  }
+
+  console.log("Yes");
+}
+
+checkMagazine("two times three is not four four", "two three four four");
