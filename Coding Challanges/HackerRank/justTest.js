@@ -57,4 +57,17 @@ function minimumBribes(q) {
   if (flag) console.log(count);
 }
 
-console.log(minimumBribes([1, 2, 5, 3, 7, 8, 6, 4]));
+function birthdayCakeCandles(candles) {
+  // Write your code here
+  //3,3,2,1
+  candles.sort((a, b) => b - a);
+  let count = 1;
+  for (let i = 0; i < candles.length; i++) {
+    if (candles[i] == candles[i + 1]) {
+      count++;
+    } else if (candles[i] !== candles[i + 1]) {
+      break;
+    }
+  }
+  return count;
+}
