@@ -97,4 +97,81 @@ function checkMagazine(magazine, note) {
   console.log("Yes");
 }
 
-checkMagazine("two times three is not four four", "two three four four");
+function makeAnagram(a, b) {
+  // Write your code here
+
+  const obj = {};
+
+  let totalCount = a.length + b.length;
+
+  for (let i = 0; i < a.length; i++) {
+    obj[a[i]] = obj[a[i]] + 1 || 1;
+  }
+
+  for (let i = 0; i < b.length; i++) {
+    if (obj[b[i]] !== undefined) {
+      if (obj[b[i]] > 1) obj[b[i]]--;
+      else delete obj[b[i]];
+      totalCount -= 2;
+    }
+  }
+
+  return totalCount;
+}
+
+function alternatingCharacters(s) {
+  // Write your code here
+  let deleteCount = 0;
+  s = s.split("");
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === s[i + 1]) {
+      s.splice(i + 1, 1);
+      deleteCount++;
+      i--;
+    }
+  }
+
+  return deleteCount;
+}
+
+/*
+ * Complete the 'gradingStudents' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY grades as parameter.
+ */
+
+function gradingStudents(grades) {
+  // Write your code here
+
+  for (let i = 0; i < grades.length; i++) {
+    let curr = grades[i];
+    if (curr < 38) {
+      continue;
+    } else {
+      let val = curr % 5;
+      console.log(val);
+      if (val === 3 || val === 4) {
+        if (val === 4) {
+          grades[i] = grades[i] + 1;
+        }
+        if (val === 3) {
+          grades[i] = grades[i] + 2;
+        }
+      }
+    }
+  }
+  return grades;
+}
+
+const obj = {
+  valid: true,
+};
+
+// async func always returns promise
+const check = async () => {
+  return obj.valid === true;
+};
+
+console.log(check());
