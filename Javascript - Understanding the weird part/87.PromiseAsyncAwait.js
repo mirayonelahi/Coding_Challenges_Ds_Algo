@@ -11,7 +11,7 @@ functions can be used as the value of an array element
 */
 
 function runThis(otherFn) {
-  console.log("running ....");
+  console.log("running....");
   otherFn();
 }
 
