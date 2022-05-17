@@ -31,24 +31,25 @@ function countingValleys(steps, path) {
   return output;
 }
 
-
 function superReducedString(s) {
   let arr = s.split("");
-  let n=arr.length
-  for (let i = 1; i < n; i++) {
-    let curr = s[i];
-    if (s[i] === s[i - 1]) {
-      arr.splice(i, 1);
-    
+  let n = arr.length;
+  for (let i = 0; i < arr.length; i++) {
+    console.log(i);
+    if (arr[i] === arr[i + 1]) {
+      arr.splice(i, 2);
+
+      //here is the gotchaaa!! why not i-- / i-=1
+      i = -1;
     }
   }
-  return arr
+  return arr;
 }
 
+console.log(superReducedString("bb"));
 
-console.log(superReducedString("abcdd"));
+const arr = ["a", "b", "c"];
 
-const arr1= [1,2,3,4,5]
-arr1.splice(1,1)
+const show = arr.shift();
 
-console.log(arr1)
+console.log(arr, show);
