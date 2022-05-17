@@ -31,4 +31,24 @@ function countingValleys(steps, path) {
   return output;
 }
 
-console.log(countingValleys(8, ["U", "D", "D", "D", "U", "D", "U", "U"]));
+
+function superReducedString(s) {
+  let arr = s.split("");
+  let n=arr.length
+  for (let i = 1; i < n; i++) {
+    let curr = s[i];
+    if (s[i] === s[i - 1]) {
+      arr.splice(i, 1);
+    
+    }
+  }
+  return arr
+}
+
+
+console.log(superReducedString("abcdd"));
+
+const arr1= [1,2,3,4,5]
+arr1.splice(1,1)
+
+console.log(arr1)
