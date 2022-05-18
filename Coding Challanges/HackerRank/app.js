@@ -46,10 +46,43 @@ function superReducedString(s) {
   return arr;
 }
 
-console.log(superReducedString("bb"));
+// strong password
 
-const arr = ["a", "b", "c"];
+function minimumNumber(n, password) {
+  // Return the minimum number of characters to make the password strong
+  let numbers = "0123456789".split("");
+  let lower_case = "abcdefghijklmnopqrstuvwxyz".split("");
+  let upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  let special_characters = "!@#$%^&*()-+".split("");
 
-const show = arr.shift();
+  let count = 4;
+  let hasNumber = true;
+  let hasLower = true;
+  let hasUper = true;
+  let hasSpecia = true;
 
-console.log(arr, show);
+  for (let i of password) {
+    if (numbers.includes(i) && hasNumber) {
+      count--;
+      hasNumber = false;
+    }
+    if (lower_case.includes(i) && hasLower) {
+      count--;
+      hasLower = false;
+    }
+    if (upper_case.includes(i) && hasUper) {
+      count--;
+      hasUper = false;
+    }
+    if (special_characters.includes(i) && hasSpecia) {
+      count--;
+      hasSpecia = false;
+    }
+  }
+
+  if (n + count < 6) return 6 - n;
+
+  return count;
+}
+
+console.log(minimumNumber(3, "AB1"));
