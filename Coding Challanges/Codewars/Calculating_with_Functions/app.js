@@ -95,3 +95,30 @@ function dividedBy(cb) {
 function myFunction(a, b) {
   return b.split(a).length - 1;
 }
+
+let str = ["a", "b", "c", "d"];
+
+let result = str.reduce((obj, cur) => ({ ...obj, [cur]: cur }), {});
+
+// takes a number returns same number if it is prime
+// if not returns next prime
+
+const primeOrNextPrime = (a) => {
+  const checkPrime = (num) => {
+    for (let i = 2; i < Math.sqrt(num); i++) {
+      if (num % i === 0 && num !== i) return false;
+    }
+    return true;
+  };
+
+  if (checkPrime(a)) return a;
+
+  let prime = a + 1;
+
+  while (!checkPrime(prime)) {
+    prime++;
+  }
+  return prime;
+};
+
+console.log(primeOrNextPrime(2000));
