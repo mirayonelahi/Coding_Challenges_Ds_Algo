@@ -108,3 +108,20 @@ const date = new Date();
 
 let A = [...a];
 let B = [...b];
+
+const myCar = {
+  color: "red",
+  logColor: function () {
+    console.log(this.color);
+  },
+};
+
+const promise = new Promise((resolve, reject) => {
+  resolve("success");
+});
+
+console.log(
+  promise.then((res) => {
+    console.log(res);
+  })
+);

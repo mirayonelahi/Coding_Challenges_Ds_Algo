@@ -1,13 +1,5 @@
 # My tech dictionary
 
-# Event Loop:
-
-# Promise
-
-# Caching
-
-# Callback
-
 # var let const
 
 - var global scope
@@ -140,3 +132,116 @@ ourFunction(item, method, ["argument1", "argument2", "argument3"]);
 No matter how many arguments we pass, they will get applied individually when .apply() is called.
 
 We have now covered the basics of JavaScript. In the next chapters, we will be looking at different features of JavaScript in detail.
+
+# Hoisting
+
+- processed before any code is executed and lifted up to the top of their scope (whether it’s global or block).
+- The main differences lie in the fact that var can still be accessed before they are defined. This causes the value to be undefined. While on the other hand, let lets the variables sit in a temporal dead zone until they are declared.
+
+# Arrow Functions :
+
+- explicit return ```js var greeting = () => { console.log(`hello ${name}`);
+  }
+
+```
+- implicit return  `const greeting = name => `hello ${name}`; `
+```
+
+# Promises :
+
+- we used to use callbacks to handle asynchronous code.
+- callback nesting creates callback hell which is a nightmare to debug.
+- Promises are a way to handle asynchronous code.
+
+create a new promise
+
+```js
+const promise = new Promise((resolve, reject) => {});
+```
+
+- By default, the promise is in the pending state.
+- The promise is in the pending state until the resolve or reject methods are called.
+- The resolve method is called when the promise is fulfilled.
+- The reject method is called when the promise is rejected.
+
+```js
+const promise = new Promise((resolve, reject) => {
+  if (condition) {
+    resolve("success");
+  } else {
+    reject("failure");
+  }
+  ß;
+});
+```
+
+```js
+promise.then((result) => {
+  console.log(result);
+});
+```
+
+- we can chain multiple thens on the same promise.
+- we can catch errors with the catch method.
+- by using then we are giving imperative instructions to the promise.
+
+Promise.all()
+
+- takes an array of promises and returns a promise that resolves when all the promises in the array have resolved.
+- if any of the promises in the array rejects, the returned promise will also reject.
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, "first value");
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, "second value");
+});
+
+Promise.all([promise1, promise2]).then((data) => {
+  const [promise1data, promise2data] = data;
+  console.log(promise1data, promise2data);
+});
+// after 1000 ms
+// first value second value
+```
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  resolve("my first value");
+});
+const promise2 = new Promise((resolve, reject) => {
+  reject(Error("oooops error"));
+});
+
+// one of the two promises will fail, but `.all` will return only a rejection.
+Promise.all([promise1, promise2])
+  .then((data) => {
+    const [promise1data, promise2data] = data;
+    console.log(promise1data, promise2data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+// Error: oooops error
+```
+
+Promise.race()
+
+- on the other hand returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects with the value from that promise.
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, "first value");
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "second value");
+});
+
+Promise.race([promise1, promise2]).then(function (value) {
+  console.log(value);
+  // Both resolve, but promise2 is faster
+});
+// expected output: "second value"
+// If we passed an empty iterable, the race would be pending forever!
+```
