@@ -48,3 +48,51 @@ const isEqual = (arr) => {
 return new Set([...arr]).size===1
 ,,,
 ```
+
+//Merge an arbitrary number of arrays
+// Write a function that takes arguments an arbitrary number of arrays
+// It should return an array containing the values of all arrays
+
+// ae we dont know the number of arguments in rest operator
+// we need to show the output in one single array
+// we can use a js build in method named flat
+
+```js
+const restArr = (...rest) => {
+  return rest.flat();
+};
+```
+
+// Add property to each object in array
+// Write a function that takes an array of objects and a string as arguments
+// Add a property with key 'continent' and value equal to the string to each of the objects
+// Return the new array of objects
+// Tip: try not to mutate the original array
+
+// by using map we can manipulate each object and also by not mutating the original array
+
+```js
+
+const addProperty(arr,str){
+    return arr.map(obj=>{
+        return {...obj,continent:str}
+    })
+}
+
+// if we write in single line
+`return arr.map((obj) => ({ ...obj, continent: str }));`
+
+```
+
+// Write a function that takes an object (a) and a number (b) as arguments
+// Multiply all values of 'a' by 'b'
+// Return the resulting object
+// multiply all object values by 2
+
+```js
+const multiply = (obj, num) => {
+  return Object.entries(obj).reduce((acc, [key, val]) => {
+    return { ...acc, [key]: val * num };
+  }, {});
+};
+```
