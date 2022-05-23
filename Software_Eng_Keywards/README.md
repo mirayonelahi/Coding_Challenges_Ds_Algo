@@ -393,3 +393,78 @@ alberto.nicknames = "Albi";
 alberto.nicknames;
 // "Your nickname is Albi"
 ```
+
+# TypeScript
+
+- TypeScript is a superset of JavaScript.
+  - boolean
+  - number
+  - string
+  - Array
+
+```js
+// first way -> type[]
+const firstArray: number[] = [1, 2, 3];
+// second way -> Array<type>
+const secondArray: Array<number> = [4, 5, 6];
+```
+
+- object
+- Tuple
+
+```js
+let myTuple: [string, number, string];
+myTuple = ["hi", 5, "hello"];
+
+console.log(myTuple);
+// [ 'hi', 5, 'hello' ]
+```
+
+- enum
+
+```js
+enum Status {deleted, pending, active}
+
+const blogPostStatus: Status = Status.active;
+
+console.log(blogPostStatus);
+// 2
+
+```
+
+- any
+- void
+- null and undefined
+- never
+
+```js
+//never is a value that never occurs. For example we can use it for a function that never returns or that always throws an error.
+function throwError(error: string): never {
+  throw new Error(error);
+}
+```
+
+Interfaces in TypeScript
+
+```js
+interface Car {
+  wheels: number;
+  color: string;
+  brand: string;
+  coupe?: boolean;
+}
+```
+
+Extending interfaces
+
+```js
+interface Vehicle {
+  wheels: number;
+  color: string;
+}
+
+interface Airplane extends Vehicle {
+  wings: number;
+  rotors: number;
+}
+```
