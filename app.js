@@ -61,4 +61,29 @@ const multiply = (obj, num) => {
   }, {});
 };
 
-console.log(multiply(obj1, 3));
+// Write a function that takes an array (a) and a value (n) as arguments
+// Save every nth element in a new array
+// Return the new array
+
+function aa(a, n) {
+  let arr = [];
+  let res = n - 1;
+  for (let i = res; i < a.length; i += n) {
+    arr.push(a[i]);
+  }
+  return arr;
+}
+
+// better soltn
+function myFunction(a, n) {
+  let rest = [...a];
+  let result = [];
+  for (let i = 0; i < a.length; i++) {
+    if (rest.length < n) break;
+    result.push(rest[n - 1]);
+    rest = rest.slice(n);
+  }
+  return result;
+}
+
+console.log(aa([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 5));
