@@ -44,6 +44,34 @@ function myFunction(str) {
   return correctedArray.join("");
 }
 
+// return the longest string from the array of string
+
+function myFunction(arr) {
+  return arr.reduce((a, b) => (a.length <= b.length ? b : a));
+}
+
+// Remove a property from an object
+
+// Write a function that takes an object as argument
+// It should return an object with all original object properties
+// except for the property with key 'b'
+
+function myFunction(obj) {
+  const { b, ...rest } = obj;
+  return rest;
+}
+
+//Get Intersection of two Javascript Sets
+// Write a function that takes two sets (a and b) as arguments
+// Get the intersection of the sets
+// In other words, return a set containing all elements that are both in a as well as b
+
+function myFunction(a, b) {
+  const int = new Set();
+  a.forEach((el) => b.has(el) && int.add(el));
+  return int;
+}
+
 const bird = {
   size: "small",
   a: "yo",
@@ -57,6 +85,7 @@ const mouse = {
 const arr = ["f", "a", "s", "d", "g"];
 const arr2 = [1, 2, 3, 4, 5];
 const set = new Set([1, 2, 3, 4]);
+const set2 = new Set([5, 3, 2, 8]);
 
 const str = "asdafqwe";
 
@@ -77,4 +106,5 @@ for (const [_, val] of Object.entries(obj)) {
 
 const date = new Date();
 
-console.log(date.setDate(date.getDate() + 12));
+let A = [...a];
+let B = [...b];
