@@ -24,3 +24,27 @@ const newObj = Object.entries(obj1).reduce((acc, [key, val]) => {
   return { ...acc, [val]: key };
 }, {});
 ```
+
+// Write a function that takes an array as argument
+// It should return true if all elements in the array are equal
+// It should return false otherwise
+// just using a basic for loop first
+
+```js
+const isEqual = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] !== arr[i - 1]) {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+// but using set data structure form js we can do it in one line
+// if we use set and spred array inside the set then if there is just one value then return true other wise return false
+
+```js
+return new Set([...arr]).size===1
+,,,
+```

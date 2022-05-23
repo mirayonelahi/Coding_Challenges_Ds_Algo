@@ -15,8 +15,19 @@ let obj1 = {
 //   delete obj1[key];
 // }
 
-const newObj = Object.entries(obj1).reduce((acc, [key, val]) => {
-  return { ...acc, [val]: key };
-}, {});
+// const newObj = Object.entries(obj1).reduce((acc, [key, val]) => {
+//   return { ...acc, [val]: key };
+// }, {});
 
-console.log(newObj);
+const arr = [1, 1, 1, 1];
+
+// const isEqual = (arr) => {
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] !== arr[i - 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+console.log(new Set([...arr]).size === 1);
