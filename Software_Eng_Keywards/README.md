@@ -245,3 +245,151 @@ Promise.race([promise1, promise2]).then(function (value) {
 // expected output: "second value"
 // If we passed an empty iterable, the race would be pending forever!
 ```
+
+# Some String methods:
+
+- indexOf()
+
+```js
+const str = "this is a short sentence";
+console.log(str.indexOf("short"));
+// Output: 10
+```
+
+- indexOf()
+
+```js
+const str = "this is a short sentence";
+console.log(str.indexOf("short"));
+// Output: 10
+```
+
+- slice()
+
+```js
+const str = "pizza, orange, cereals";
+console.log(str.slice(0, 5));
+// Output: "pizza"
+// Output: 10
+```
+
+- includes()
+
+```js
+const code = "ABCDEF";
+
+console.log(code.includes("ABB"));
+// false
+console.log(code.includes("abc"));
+// false, includes is case sensitive
+console.log(code.includes("CDE"));
+// true
+```
+
+- repeat()
+
+```js
+let hello = "Hi";
+console.log(hello.repeat(10));
+// "HiHiHiHiHiHiHiHiHiHi"
+```
+
+# class:
+
+“Classes are primarily syntactic sugar over Javascript's existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.”
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function () {
+  console.log("Hello, my name is " + this.name);
+};
+
+const alberto = new Person("Alberto", 26);
+const caroline = new Person("Caroline", 26);
+
+alberto.greet();
+// Hello, my name is Alberto
+caroline.greet();
+// Hello, my name is Caroline
+```
+
+// now lets do this using ES6 classes
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(
+      `Hello, my name is ${this.name} and I am ${this.age} years old`
+    );
+  } // no commas in between methods
+  farewell() {
+    console.log("goodbye friend");
+  }
+}
+
+const alberto = new Person("Alberto", 26);
+
+alberto.greet();
+// Hello, my name is Alberto and I am 26 years old
+alberto.farewell();
+// goodbye friend
+```
+
+Static methods #
+Right now the two new methods that we created- greet() and farewell()- can be accessed by every new instance of Person, but what if we want a method that can only be accessed by the class itself, similarly to Array.of() for arrays?
+
+The following example will throw an error:
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  static info() {
+    console.log("I am a Person class, nice to meet you");
+  }
+}
+
+const alberto = new Person("Alberto", 26);
+
+alberto.info();
+// TypeError: alberto.info is not a function
+```
+
+set and get
+
+```js
+class Person {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+    this.nickname = "";
+  }
+  set nicknames(value) {
+    this.nickname = value;
+    console.log(this.nickname);
+  }
+  get nicknames() {
+    console.log(`Your nickname is ${this.nickname}`);
+  }
+}
+
+const alberto = new Person("Alberto", "Montalesi");
+
+// first we call the setter
+alberto.nicknames = "Albi";
+// "Albi"
+
+// then we call the getter
+alberto.nicknames;
+// "Your nickname is Albi"
+```

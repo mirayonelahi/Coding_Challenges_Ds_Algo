@@ -125,3 +125,18 @@ console.log(
     console.log(res);
   })
 );
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const ayon = new Person("ayon", 23);
+
+Person.prototype.sayName = function () {
+  console.log(`My name is ${this.name}`);
+};
+
+ayon.sayName();
+const mir = new Person("mir", 23);
+mir.sayName();
