@@ -115,3 +115,45 @@ function myFunction(x, y) {
   return { ...x, ...rest, d: b };
 }
 ```
+
+** convert any string in n pattern **
+
+// add a character/string after every nth character
+
+```js
+const addSpace = (str) => {
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (i % 3 === 0 && i !== 0) {
+      result += "-";
+    }
+    result += str[i];
+  }
+
+  return result;
+};
+```
+
+// check if 2 string has same characters in any arrangement
+
+```js
+const str1 = "ayon elahi";
+const str2 = "elahi yona ";
+
+const checkTwoString = (str1, str2) => {
+  let arr = str1.replace(/ /g, "").split("");
+  arr.sort();
+  let arr2 = str2.replace(/ /g, "").split("");
+  arr2.sort();
+  return arr.join("") === arr2.join("");
+};
+
+console.log(checkTwoString(str1, str2)); // true
+```
+
+we can also use hashmap to solve this same problem
+
+```js
+
+```

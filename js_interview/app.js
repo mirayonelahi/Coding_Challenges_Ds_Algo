@@ -28,10 +28,8 @@ function myFunction(a, b) {
   let result = [];
   let rest = a;
   while (rest.length) {
-    console.log(rest);
     result.push(rest.slice(-3));
     rest = rest.slice(0, -3);
-    console.log(rest);
   }
   return result.reverse().join(b);
 }
@@ -87,66 +85,133 @@ const arr2 = [1, 2, 3, 4, 5];
 const set = new Set([1, 2, 3, 4]);
 const set2 = new Set([5, 3, 2, 8]);
 
-const str = "asdafqwe";
+// const str = "asdafqwe";
 
-function aa(a, b) {
-  return b in a;
-}
-let a = "a";
-let b = "a";
-let obj = {};
+// function aa(a, b) {
+//   return b in a;
+// }
+// let a = "a";
+// let b = "a";
 
 // for(let i=0;i<arr.length;i++){
 //     obj[arr[i]] = arr2[i]
 // }
 
-for (const [_, val] of Object.entries(obj)) {
-  res += val;
-}
+// for (const [_, val] of Object.entries(obj)) {
+//   res += val;
+// }
 
-const date = new Date();
+// const date = new Date();
 
-let A = [...a];
-let B = [...b];
+// const myCar = {
+//   color: "red",
+//   logColor: function () {
+//     console.log(this.color);
+//   },
+// };
 
-const myCar = {
-  color: "red",
-  logColor: function () {
-    console.log(this.color);
-  },
+// const promise = new Promise((resolve, reject) => {
+//   resolve("success");
+// });
+
+// console.log(
+//   promise.then((res) => {
+//     console.log(res);
+//   })
+// );
+
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// const ayon = new Person("ayon", 23);
+
+// Person.prototype.sayName = function () {
+//   console.log(`My name is ${this.name}`);
+// };
+
+// ayon.sayName();
+// const mir = new Person("mir", 23);
+// mir.sayName();
+
+// const testObj = { a: "", b: "b", c: " ", d: "d" };
+
+// for (let [key, val] of Object.entries(testObj)) {
+//   if (testObj[key].trim() === "") {
+//     testObj[key] = null;
+//   }
+// }
+
+// console.log(testObj);
+
+// let obj = { fn: "Lisa", ln: "Müller", age: 17, size: 175, weight: 67 };
+
+// const { fn, ln, size, weight } = obj;
+// const test1 = {
+//   fn,
+//   ln,
+//   size,
+//   weight,
+//   size: size + "cm",
+//   weight: weight + "kg",
+// };
+
+// const test2 = {
+//   fn: obj.fn,
+//   ln: obj.ln,
+//   ...(obj.size && { size: `${obj.size}cm` }),
+//   ...(obj.weight && { weight: `${obj.weight}kg` }),
+// };
+
+// a string is given
+
+// add a space after every n character
+
+// const addSpace = (str) => {
+//   let result = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (i % 3 === 0 && i !== 0) {
+//       result += "-";
+//     }
+//     result += str[i];
+//   }
+
+//   return result;
+// };
+
+// console.log(addSpace(str));
+
+// now add space from end of the string
+
+// let str = "1234567";
+// const addSpaceBack = (str) => {
+//   let arr = str.split("");
+//   let result = "";
+
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     if (i % 3 === 0 && i !== arr.length - 1) {
+//       result += " ";
+//     }
+//     result += arr[i];
+//   }
+
+//   return result.split("").reverse().join("");
+// };
+
+// console.log(addSpaceBack(str));
+
+// console.log(4 === 4.0);
+const str1 = "ayon elahi";
+const str2 = "elahi yona ";
+
+const checkTwoString = (str1, str2) => {
+  let arr = str1.replace(/ /g, "").split("");
+  arr.sort();
+  let arr2 = str2.replace(/ /g, "").split("");
+  arr2.sort();
+  return arr.join("") === arr2.join("");
 };
 
-const promise = new Promise((resolve, reject) => {
-  resolve("success");
-});
-
-console.log(
-  promise.then((res) => {
-    console.log(res);
-  })
-);
-
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-const ayon = new Person("ayon", 23);
-
-Person.prototype.sayName = function () {
-  console.log(`My name is ${this.name}`);
-};
-
-ayon.sayName();
-const mir = new Person("mir", 23);
-mir.sayName();
-
-const testObj = { a: "", b: "b", c: " ", d: "d" };
-
-for (let [key, val] of Object.entries(testObj)) {
-  if (testObj[key].trim() === "") {
-    testObj[key] = null;
-  }
-}
-
-console.log(testObj);
+console.log(checkTwoString(str1, str2)); // true
