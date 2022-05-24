@@ -96,3 +96,22 @@ const multiply = (obj, num) => {
   }, {});
 };
 ```
+
+Merge two objects with matching keys
+
+- we can destructure from object y
+- we need to separate keys with named b
+- and add those values in new key named d
+
+```js
+// Write a function that takes two objects as arguments
+// Unfortunately, the property 'b' in the second object has the wrong key
+// It should be named 'd' instead
+// Merge both objects and correct the wrong property name
+// Return the resulting object
+// It should have the properties 'a', 'b', 'c', 'd', and 'e'
+function myFunction(x, y) {
+  const { b, ...rest } = y;
+  return { ...x, ...rest, d: b };
+}
+```
