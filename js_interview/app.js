@@ -140,3 +140,13 @@ Person.prototype.sayName = function () {
 ayon.sayName();
 const mir = new Person("mir", 23);
 mir.sayName();
+
+const testObj = { a: "", b: "b", c: " ", d: "d" };
+
+for (let [key, val] of Object.entries(testObj)) {
+  if (testObj[key].trim() === "") {
+    testObj[key] = null;
+  }
+}
+
+console.log(testObj);

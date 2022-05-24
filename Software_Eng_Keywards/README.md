@@ -468,3 +468,55 @@ interface Airplane extends Vehicle {
   rotors: number;
 }
 ```
+
+# Amazone Web Services
+
+## Amazon EC2
+
+- Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity in the cloud.
+- EC2 is a managed service that provides a web service that allows you to create, configure, and launch virtual machines on AWS.
+
+## Amazon S3
+
+- Amazon Simple Storage Service (S3) is a web service that provides secure, durable, and easy-to-use storage for data.
+- S3 is a managed service that provides a web service that allows you to store and retrieve data from a variety of cloud storage and backup storage options.
+
+## Amazon RDS
+
+- Amazon Relational Database Service (RDS) is a web service that provides a fully managed, robust, scalable database engine that is designed to meet your data-intensive needs.
+- RDS is a managed service that provides a web service that allows you to create, configure, and launch relational databases on AWS.
+
+## DYNAMODB
+
+- Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
+- DynamoDB is a managed service that provides a web service that allows you to create, configure, and launch NoSQL databases on AWS.
+
+## Amazon CloudFront
+
+- Amazon CloudFront is a web service that makes it easy and inexpensive to set up global content delivery networks in the cloud.
+- CloudFront is a managed service that provides a web service that allows you to create, configure, and launch global content delivery networks on AWS.
+
+## Amazon Lambda
+
+- Amazon Lambda is a web service that provides stateless functions that run on AWS Lambda compute resources.
+- Lambda is a managed service that provides a web service that allows you to create, configure, and launch stateless functions on AWS.
+
+## Amazon SNS
+
+- Amazon Simple Notification Service (SNS) is a web service that enables you to build applications that can send and receive text messages.
+- SNS is a managed service that provides a web service that allows you to create, configure, and launch applications that can send and receive text messages on AWS.
+
+## Amazon Amplify
+
+- Amazon Amplify is a web service that enables developers to build and deploy mobile and web apps to mobile and web devices.
+- Amplify is a managed service that provides a web service that allows you to create, configure, and launch mobile and web apps on AWS.
+
+## Amazon Elasticbeanstalk
+
+- Amazon Elastic Beanstalk is a web service that makes it easy to deploy, operate, and scale web applications on Amazon Web Services.
+- Elastic Beanstalk is a managed service that provides a web service that allows you to create, configure, and launch web applications on AWS.
+
+## Amazon Elastic cache
+
+- Amazon ElastiCache is a web service that makes it easy to set up, operate, and scale a distributed cache in the cloud.
+- ElastiCache is a managed service that provides a web service that allows you to create, configure, and launch distributed caches on AWS.
