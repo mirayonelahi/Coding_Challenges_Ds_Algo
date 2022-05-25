@@ -579,3 +579,14 @@ Robust
 Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
 
 Guideline 4.1: Maximize compatibility with current and future user agents, including assistive technologies.
+
+# cookies and localStorage
+
+Cookies and local storage serve different purposes. Cookies are primarily for reading server-side, local storage can only be read by the client-side. So the question is, in your app, who needs this data — the client or the server?
+
+If it's your client (your JavaScript), then by all means switch. You're wasting bandwidth by sending all the data in each HTTP header.
+
+If it's your server, local storage isn't so useful because you'd have to forward the data along somehow (with Ajax or hidden form fields or something). This might be okay if the server only needs a small subset of the total data for each request.
+
+- cookies can hold 4kb of data
+- local storage can hold up to 5mb of data
