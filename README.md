@@ -155,5 +155,23 @@ console.log(checkTwoString(str1, str2)); // true
 we can also use hashmap to solve this same problem
 
 ```js
+const checkTwoStringHashMap = (str1, str2) => {
+  const obj = {};
 
+  for (let i of str1) {
+    obj[i] = obj[i] + 1 || 1;
+  }
+
+  for (let i of str2) {
+    if (obj[i]) {
+      obj[i]--;
+      if (obj[i] === 0) {
+        delete obj[i];
+      }
+    } else return false;
+  }
+
+  return Object.values(obj).length === 0 ? true : false;
+};
+console.log(checkTwoStringHashMap(str1, str2)); // true
 ```

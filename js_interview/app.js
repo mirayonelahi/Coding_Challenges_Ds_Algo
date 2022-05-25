@@ -204,7 +204,7 @@ const set2 = new Set([5, 3, 2, 8]);
 
 // console.log(4 === 4.0);
 const str1 = "ayon elahi";
-const str2 = "elahi yona ";
+const str2 = "elahi yona";
 
 const checkTwoString = (str1, str2) => {
   let arr = str1.replace(/ /g, "").split("");
@@ -214,4 +214,22 @@ const checkTwoString = (str1, str2) => {
   return arr.join("") === arr2.join("");
 };
 
-console.log(checkTwoString(str1, str2)); // true
+const checkTwoStringHashMap = (str1, str2) => {
+  const obj = {};
+
+  for (let i of str1) {
+    obj[i] = obj[i] + 1 || 1;
+  }
+
+  for (let i of str2) {
+    if (obj[i]) {
+      obj[i]--;
+      if (obj[i] === 0) {
+        delete obj[i];
+      }
+    } else return false;
+  }
+
+  return Object.values(obj).length === 0 ? true : false;
+};
+console.log(checkTwoStringHashMap(str1, str2)); // true
