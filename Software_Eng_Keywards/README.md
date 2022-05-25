@@ -545,3 +545,37 @@ interface Airplane extends Vehicle {
 - Declarative programming model
 - supports parallel programming
 - Functional programming is used when there are few things with many operations.
+
+# Web Accessibility
+
+- Web accessibility is the ability of a web page to be understood by people with disabilities.
+- 4 principles
+- Perceivable
+- Operable
+- Understandable
+- Robust
+
+Perceivable
+Information and user interface components must be presentable to users in ways they can perceive.
+
+Guideline 1.1: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.
+Guideline 1.2: Time-based media: Provide alternatives for time-based media.
+Guideline 1.3: Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
+Guideline 1.4: Make it easier for users to see and hear content including separating foreground from background.
+Operable
+User interface components and navigation must be operable.
+
+Guideline 2.1: Make all functionality available from a keyboard.
+Guideline 2.2: Provide users enough time to read and use content.
+Guideline 2.3: Do not design content in a way that is known to cause seizures.
+Guideline 2.4: Provide ways to help users navigate, find content, and determine where they are.
+Understandable
+Information and the operation of user interface must be understandable.
+
+Guideline 3.1: Make text content readable and understandable.
+Guideline 3.2: Make web pages appear and operate in predictable ways.
+Guideline 3.3: Help users avoid and correct mistakes.
+Robust
+Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
+
+Guideline 4.1: Maximize compatibility with current and future user agents, including assistive technologies.
