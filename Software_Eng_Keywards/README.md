@@ -524,3 +524,24 @@ interface Airplane extends Vehicle {
 # Dynamic Import
 
 # Tree Shaking
+
+# undefined and null
+
+- undefined is a value that represents a variable that has not been assigned a value.
+- undefined is a type
+- null is an object
+- null is a value that represents a variable that has been assigned a value of null.
+
+# OOP vs Functional Programming
+
+- OOP is a programming paradigm that uses objects and classes to model real-world concepts.
+- uses mutable data
+- imperative programming model
+- does not support parallel programming
+- Object-oriented programming is used when there are many things with few operations.
+
+- Functional programming is a programming paradigm that uses functions to model real-world concepts.
+- uses immutable data
+- Declarative programming model
+- supports parallel programming
+- Functional programming is used when there are few things with many operations.
