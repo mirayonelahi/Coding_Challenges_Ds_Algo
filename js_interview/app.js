@@ -232,4 +232,5 @@ const checkTwoStringHashMap = (str1, str2) => {
 
   return Object.values(obj).length === 0 ? true : false;
 };
-console.log(checkTwoStringHashMap(str1, str2)); // true
+
+console.log([1, 2, 3, 5].map((num) => num * num));

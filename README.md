@@ -175,3 +175,34 @@ const checkTwoStringHashMap = (str1, str2) => {
 };
 console.log(checkTwoStringHashMap(str1, str2)); // true
 ```
+
+Lets play with .map(), .filter(), .reduce()
+
+- map is used to iterate over an array and return a new array
+- so we can use map to manipulate the array
+- if we dont need to return a new array or manipulate the array then using map is anti-pattern. At time we can use for of/ forEach.
+
+```js
+// square each number in an array
+const arr = [1, 2, 3, 4, 5];
+const squaredArray = arr.map((num) => num * num);
+```
+
+- map doesnt change the original array or the size of the array
+- if we want to manipulate and change the size of array depending on the condition then we can use .filter()
+
+```js
+// get only the positive numbers from an array
+const arr = [-1, 2, 3, -4, 5];
+const positiveArray = arr.filter((num) => num > 0);
+```
+
+- reduce is used to iterate over an array and return a single value
+- reduce reduced to a single value
+- we can chain map, filter, reduce
+
+```js
+// get the sum of all numbers in an array
+const arr = [1, 2, 3, 4, 5];
+const sum = arr.reduce((acc, num) => acc + num, 0);
+```
