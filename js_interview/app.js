@@ -14,39 +14,39 @@
 
 // for using var and let we will be having 2 different output as we know var is global scoped and let/const is block scoped
 
-const flag = (x, y) => {
-  if (x % y === 0) return x;
-  let result = x + 1;
-  while (result % y) {
-    result++;
-  }
+// const flag = (x, y) => {
+//   if (x % y === 0) return x;
+//   let result = x + 1;
+//   while (result % y) {
+//     result++;
+//   }
 
-  return result;
-};
+//   return result;
+// };
 
-function myFunction(a, b) {
-  let result = [];
-  let rest = a;
-  while (rest.length) {
-    result.push(rest.slice(-3));
-    rest = rest.slice(0, -3);
-  }
-  return result.reverse().join(b);
-}
+// function myFunction(a, b) {
+//   let result = [];
+//   let rest = a;
+//   while (rest.length) {
+//     result.push(rest.slice(-3));
+//     rest = rest.slice(0, -3);
+//   }
+//   return result.reverse().join(b);
+// }
 
-function myFunction(str) {
-  const arr = [...str];
-  const correctedArray = arr.map((e) =>
-    String.fromCharCode(e.charCodeAt() + 1)
-  );
-  return correctedArray.join("");
-}
+// function myFunction(str) {
+//   const arr = [...str];
+//   const correctedArray = arr.map((e) =>
+//     String.fromCharCode(e.charCodeAt() + 1)
+//   );
+//   return correctedArray.join("");
+// }
 
-// return the longest string from the array of string
+// // return the longest string from the array of string
 
-function myFunction(arr) {
-  return arr.reduce((a, b) => (a.length <= b.length ? b : a));
-}
+// function myFunction(arr) {
+//   return arr.reduce((a, b) => (a.length <= b.length ? b : a));
+// }
 
 // Remove a property from an object
 
@@ -54,36 +54,36 @@ function myFunction(arr) {
 // It should return an object with all original object properties
 // except for the property with key 'b'
 
-function myFunction(obj) {
-  const { b, ...rest } = obj;
-  return rest;
-}
+// function myFunction(obj) {
+//   const { b, ...rest } = obj;
+//   return rest;
+// }
 
 //Get Intersection of two Javascript Sets
 // Write a function that takes two sets (a and b) as arguments
 // Get the intersection of the sets
 // In other words, return a set containing all elements that are both in a as well as b
 
-function myFunction(a, b) {
-  const int = new Set();
-  a.forEach((el) => b.has(el) && int.add(el));
-  return int;
-}
+// function myFunction(a, b) {
+//   const int = new Set();
+//   a.forEach((el) => b.has(el) && int.add(el));
+//   return int;
+// }
 
-const bird = {
-  size: "small",
-  a: "yo",
-};
+// const bird = {
+//   size: "small",
+//   a: "yo",
+// };
 
-const mouse = {
-  name: "Mickey",
-  small: true,
-};
+// const mouse = {
+//   name: "Mickey",
+//   small: true,
+// };
 
-const arr = ["f", "a", "s", "d", "g"];
-const arr2 = [1, 2, 3, 4, 5];
-const set = new Set([1, 2, 3, 4]);
-const set2 = new Set([5, 3, 2, 8]);
+// const arr = ["f", "a", "s", "d", "g"];
+// const arr2 = [1, 2, 3, 4, 5];
+// const set = new Set([1, 2, 3, 4]);
+// const set2 = new Set([5, 3, 2, 8]);
 
 // const str = "asdafqwe";
 
@@ -203,34 +203,52 @@ const set2 = new Set([5, 3, 2, 8]);
 // console.log(addSpaceBack(str));
 
 // console.log(4 === 4.0);
-const str1 = "ayon elahi";
-const str2 = "elahi yona";
+// const str1 = "ayon elahi";
+// const str2 = "elahi yona";
 
-const checkTwoString = (str1, str2) => {
-  let arr = str1.replace(/ /g, "").split("");
-  arr.sort();
-  let arr2 = str2.replace(/ /g, "").split("");
-  arr2.sort();
-  return arr.join("") === arr2.join("");
+// const checkTwoString = (str1, str2) => {
+//   let arr = str1.replace(/ /g, "").split("");
+//   arr.sort();
+//   let arr2 = str2.replace(/ /g, "").split("");
+//   arr2.sort();
+//   return arr.join("") === arr2.join("");
+// };
+
+// const checkTwoStringHashMap = (str1, str2) => {
+//   const obj = {};
+
+//   for (let i of str1) {
+//     obj[i] = obj[i] + 1 || 1;
+//   }
+
+//   for (let i of str2) {
+//     if (obj[i]) {
+//       obj[i]--;
+//       if (obj[i] === 0) {
+//         delete obj[i];
+//       }
+//     } else return false;
+//   }
+
+//   return Object.values(obj).length === 0 ? true : false;
+// };
+
+// const objectSort = (obj) => {
+//   return obj.sort((x, y) => x.b - y.b);
+// };
+
+// console.log(
+//   objectSort([
+//     { a: 2, b: 10 },
+//     { a: 5, b: 4 },
+//   ])
+// );
+
+const arr1 = [1, 2, 3, 4, 7];
+const arr2 = [2, 5, 6, 7];
+
+const app = (arr1, arr2) => {
+  return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
 };
 
-const checkTwoStringHashMap = (str1, str2) => {
-  const obj = {};
-
-  for (let i of str1) {
-    obj[i] = obj[i] + 1 || 1;
-  }
-
-  for (let i of str2) {
-    if (obj[i]) {
-      obj[i]--;
-      if (obj[i] === 0) {
-        delete obj[i];
-      }
-    } else return false;
-  }
-
-  return Object.values(obj).length === 0 ? true : false;
-};
-
-console.log([1, 2, 3, 5].map((num) => num * num));
+console.log(app([-10, 22, 333, 42], [-11, 5, 22, 41, 42]));

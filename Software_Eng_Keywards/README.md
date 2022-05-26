@@ -590,3 +590,8 @@ If it's your server, local storage isn't so useful because you'd have to forward
 
 - cookies can hold 4kb of data
 - local storage can hold up to 5mb of data
+
+# Tightly coupled
+
+- Tightly coupled means that the code is tightly coupled with the other code.
+- Tightly Coupled Object is an object that needs to know about other objects and are usually highly dependent on each other's interfaces.

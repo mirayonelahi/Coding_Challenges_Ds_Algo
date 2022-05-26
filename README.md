@@ -206,3 +206,12 @@ const positiveArray = arr.filter((num) => num > 0);
 const arr = [1, 2, 3, 4, 5];
 const sum = arr.reduce((acc, num) => acc + num, 0);
 ```
+
+// two arrays given
+// return one array with no duplicate values and sorted
+
+```js
+const app = (arr1, arr2) => {
+  return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
+};
+```
