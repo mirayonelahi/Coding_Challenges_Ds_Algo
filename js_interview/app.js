@@ -247,8 +247,16 @@
 const arr1 = [1, 2, 3, 4, 7];
 const arr2 = [2, 5, 6, 7];
 
-const app = (arr1, arr2) => {
-  return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
+// const app = (arr, b) => {
+//   let filter = arr.filter((x) => x > b);
+//   return filter.reduce((prev, curr) => prev + curr, 0);
+// };
+
+const app = (arr, val) => {
+  return arr.reduce((prev, cur) => {
+    if (cur > val) return prev + cur;
+    return prev;
+  }, 0);
 };
 
-console.log(app([-10, 22, 333, 42], [-11, 5, 22, 41, 42]));
+console.log(app([-10, -11, -3, 1, -4], -3));

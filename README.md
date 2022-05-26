@@ -215,3 +215,35 @@ const app = (arr1, arr2) => {
   return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
 };
 ```
+
+// Write a function that takes an array (a) and a number (b) as arguments
+// Sum up all array elements with a value greater than b
+// Return the sum
+
+myFunction([1, 2, 3, 4, 5, 6, 7], 2)
+Expected
+25
+myFunction([-10, -11, -3, 1, -4], -3)
+Expected
+1
+myFunction([78, 99, 100, 101, 401], 99)
+Expected
+602
+
+```js
+const app = (arr, b) => {
+  let filter = arr.filter((x) => x > b);
+  return filter.reduce((prev, curr) => prev + curr, 0);
+};
+```
+
+we can also solve by only using reduce
+
+```js
+function myFunction(a, b) {
+  return a.reduce((sum, cur) => {
+    if (cur > b) return sum + cur;
+    return sum;
+  }, 0);
+}
+```
