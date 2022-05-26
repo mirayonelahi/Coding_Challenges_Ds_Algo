@@ -244,19 +244,36 @@
 //   ])
 // );
 
-const arr1 = [1, 2, 3, 4, 7];
-const arr2 = [2, 5, 6, 7];
+// const arr1 = [1, 2, 3, 4, 7];
+// const arr2 = [2, 5, 6, 7];
 
 // const app = (arr, b) => {
 //   let filter = arr.filter((x) => x > b);
 //   return filter.reduce((prev, curr) => prev + curr, 0);
 // };
 
-const app = (arr, val) => {
-  return arr.reduce((prev, cur) => {
-    if (cur > val) return prev + cur;
-    return prev;
-  }, 0);
-};
+// const arr = ["Arif", "Alif", "Ben"];
 
-console.log(app([-10, -11, -3, 1, -4], -3));
+// const app = (arr) => {
+//   let obj = {};
+//   for (let i of arr) {
+//     let first = i[0].toLowerCase();
+//     if (obj[first] !== undefined) {
+//       obj[first] = [...obj[first], i];
+//     } else {
+//       obj[first] = [i];
+//     }
+//   }
+//   return obj;
+// };
+
+// function myFunction(arr) {
+//   return arr.reduce((acc, cur) => {
+//     const firstLetter = cur.toLowerCase().charAt(0);
+//     return { ...acc, [firstLetter]: [...(acc[firstLetter] || []), cur] };
+//   }, {});
+// }
+
+function myFunction(arr, num) {
+  return [...(num > 5 ? [num] : [0]), ...arr];
+}

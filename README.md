@@ -247,3 +247,74 @@ function myFunction(a, b) {
   }, 0);
 }
 ```
+
+// Write a function that takes an array of strings as argument
+// Group those strings by their first letter
+// Return an object that contains properties with keys representing first letters
+// The values should be arrays of strings containing only the corresponding strings
+// For example, the array ['Alf', 'Alice', 'Ben'] should be transformed to
+// { a: ['Alf', 'Alice'], b: ['Ben']}
+
+myFunction(['Alf', 'Alice', 'Ben'])
+Expected
+{ a: ['Alf', 'Alice'], b: ['Ben']}
+myFunction(['Ant', 'Bear', 'Bird'])
+Expected
+{ a: ['Ant'], b: ['Bear', 'Bird']}
+myFunction(['Berlin', 'Paris', 'Prague'])
+Expected
+{ b: ['Berlin'], p: ['Paris', 'Prague']}
+
+```js
+const app = (arr) => {
+  let obj = {};
+  for (let i of arr) {
+    let first = i[0].toLowerCase();
+    if (obj[first] !== undefined) {
+      obj[first] = [...obj[first], i];
+    } else {
+      obj[first] = [i];
+    }
+  }
+  return obj;
+};
+```
+
+// we can implement this using reduce
+
+```js
+function myFunction(arr) {
+  return arr.reduce((acc, cur) => {
+    const firstLetter = cur.toLowerCase().charAt(0);
+    return { ...acc, [firstLetter]: [...(acc[firstLetter] || []), cur] };
+  }, {});
+}
+```
+
+// Write a function that takes an array with arbitrary elements and a number as arguments
+// Return a new array, the first element should be either the given number itself
+// or zero if the number is smaller than 6
+// The other elements should be the elements of the original array
+// Try not to mutate the original array
+
+myFunction([1,2,3], 6)
+Expected
+[6,1,2,3]
+myFunction(['a','b'], 2)
+Expected
+[0,'a','b']
+myFunction([null,false], 11)
+Expected
+[11,null,false]
+
+```js
+return num < 6 ? [0, ...arr] : [num, ...arr];
+```
+
+we can use this in different way:
+
+```js
+function myFunction(arr, num) {
+  return [...(num > 5 ? [num] : [0]), ...arr];
+}
+```
