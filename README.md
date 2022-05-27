@@ -318,3 +318,66 @@ function myFunction(arr, num) {
   return [...(num > 5 ? [num] : [0]), ...arr];
 }
 ```
+
+Given an array of integers, find the one that appears an odd number of times.
+
+There will always be only one integer that appears an odd number of times.
+
+Examples
+[7] should return 7, because it occurs 1 time (which is odd).
+[0] should return 0, because it occurs 1 time (which is odd).
+[1,1,2] should return 2, because it occurs 1 time (which is odd).
+[0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+
+```js
+function findOdd(A) {
+  // take a hashmap and all values to key and value as no of times
+  // finally loop through the obj and print the odd number key
+  let obj = {};
+  for (let i of A) {
+    obj[i] = obj[i] + 1 || 1;
+  }
+
+  for (const [key, val] of Object.entries(obj)) {
+    if (obj[key] % 2 !== 0) return +key;
+  }
+}
+
+//different way
+const app = (arr) => {
+  let obj = {};
+  for (let i of arr) {
+    if (obj[i] !== undefined) {
+      obj[i]++;
+    } else {
+      obj[i] = 1;
+    }
+  }
+  // solving more declarative and es6 way
+  return Object.keys(obj).find((key) => obj[key] % 2 !== 0);
+};
+```
+
+Find the longest word in a string?
+
+```js
+const longestWord = (str) => {
+  let longestCount = -Infinity;
+
+  str = str.split(" ");
+
+  for (let i of str) {
+    longestCount = Math.max(longestCount, i.length);
+  }
+
+  return longestCount;
+};
+```
+
+```js
+function findLongestWord(str) {
+  let arr = str.split(" ");
+  return arr.sort((a, b) => b.length - a.length)[0].length;
+}
+```

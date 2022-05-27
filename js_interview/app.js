@@ -278,13 +278,39 @@
 //   return [...(num > 5 ? [num] : [0]), ...arr];
 // }
 
-const people = [1, 2, 3, 4];
+// const people = [1, 2, 3, 4];
 
-const showPeople = async (arr) => arr.map((x) => x);
+// const showPeople = async (arr) => arr.map((x) => x);
 
-console.log(typeof showPeople);
+// console.log(typeof showPeople);
 
-console.log(showPeople(people));
+// console.log(showPeople(people));
 
-console.log(true && false);
-console.log(false || true);
+// console.log(true && false);
+// console.log(false || true);
+
+// const app = (arr) => {
+//   let obj = {};
+//   for (let i of arr) {
+//     if (obj[i] !== undefined) {
+//       obj[i]++;
+//     } else {
+//       obj[i] = 1;
+//     }
+//   }
+//   return Object.keys(obj).find((key) => obj[key] % 2 !== 0);
+// };
+
+const longestWord = (str) => {
+  let longestCount = -Infinity;
+
+  str = str.split(" ");
+
+  for (let i of str) {
+    longestCount = Math.max(longestCount, i.length);
+  }
+
+  return longestCount;
+};
+
+console.log(longestWord("hi my name is mir Ayon Elahi"));
