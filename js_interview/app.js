@@ -274,6 +274,17 @@
 //   }, {});
 // }
 
-function myFunction(arr, num) {
-  return [...(num > 5 ? [num] : [0]), ...arr];
-}
+// function myFunction(arr, num) {
+//   return [...(num > 5 ? [num] : [0]), ...arr];
+// }
+
+const people = [1, 2, 3, 4];
+
+const showPeople = async (arr) => arr.map((x) => x);
+
+console.log(typeof showPeople);
+
+console.log(showPeople(people));
+
+console.log(true && false);
+console.log(false || true);

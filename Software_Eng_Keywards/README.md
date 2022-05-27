@@ -523,7 +523,18 @@ interface Airplane extends Vehicle {
 
 # Dynamic Import
 
+- importing a module dynamically like when it requires
+
+  ```js
+  if (condition) {
+    import("./module");
+  }
+  ```
+
 # Tree Shaking
+
+- Tree Shaking is a process that removes unused code from a bundle.
+- only import the part which is used and required
 
 # undefined and null
 
@@ -595,3 +606,50 @@ If it's your server, local storage isn't so useful because you'd have to forward
 
 - Tightly coupled means that the code is tightly coupled with the other code.
 - Tightly Coupled Object is an object that needs to know about other objects and are usually highly dependent on each other's interfaces.
+
+# Imperative vs Declarative
+
+- imperative programming model like where you are giving lots of step by step instructions to write program
+- imperative - code for the computer
+
+```js
+// imperative example
+const people = ["Doug", "Fred", "Jane"];
+const invitations = [];
+
+for (let i = 0; i < people.length; i++) {
+  invitations[i] = `Hi ${people[i]}, come to my party!`;
+}
+
+console.log(invitations);
+```
+
+- declarative programming model where you are giving a high level description of what you want to do and then the code will be generated automatically
+- declarative - code for the human
+
+```js
+// declarative way
+const people = ["Doug", "Fred", "Jane"];
+
+const invitations = people.map((person) => `Hi ${person}, come to my party!`);
+
+console.log(invitations);
+```
+
+# Ternary and Short-circuiting
+
+- Ternary operator is a conditional operator that has three operands.
+- Short-circuiting is a technique that allows you to stop the evaluation of a conditional expression if the condition is false.
+- x || y -> if x is true, then x is returned, otherwise y is returned.
+- x && y -> if x is only true then it will go and check right side of the operator, otherwise it will return false.
+- true && true -> true
+- true && false -> false
+
+```js
+// Ternary operator
+return x > y ? x : y;
+// Short-circuiting
+const value = response || "No response";
+//another example
+return x > y && x;
+```
