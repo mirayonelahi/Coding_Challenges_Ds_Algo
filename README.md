@@ -381,3 +381,45 @@ function findLongestWord(str) {
   return arr.sort((a, b) => b.length - a.length)[0].length;
 }
 ```
+
+Find the two sum of an array
+
+```js
+const twoSum = (arr, target) => {
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const curr = arr[i];
+    let diff = target - curr;
+
+    if (obj[diff] !== undefined) {
+      return `${obj[diff]} ${i} `;
+    } else {
+      obj[curr] = i;
+    }
+  }
+};
+```
+
+Given array is it arithmetic,geometric or none
+
+```js
+const checkMathSequence = (arr) => {
+  let arithCounter = arr[1] - arr[0];
+  let geometricCounter = Math.sqrt(arr[1]);
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] - arr[i - 1] !== arithCounter) {
+      arithCounter = false;
+    }
+    if (arr[i - 1] * geometricCounter !== arr[i]) {
+      geometricCounter = false;
+    }
+  }
+
+  if (!arithCounter && !geometricCounter) return "none";
+
+  if (arithCounter) return "arithCounter";
+  if (geometricCounter) return "geometricCounter";
+};
+```

@@ -6,6 +6,20 @@
 // twoSum([2,7,11,15], 9) --> [0,1]
 // twoSum([3,5,4], 9) --> [1,2]
 
-function twoSum(arr, target) {}
+const twoSum = (nums, target) => {
+  const map = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const another = target - nums[i];
+
+    if (another in map) {
+      return [map[another], i];
+    }
+
+    map[nums[i]] = i;
+  }
+
+  return null;
+};
 
 module.exports = twoSum;

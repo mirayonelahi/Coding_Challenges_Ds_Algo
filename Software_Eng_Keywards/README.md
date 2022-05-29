@@ -653,3 +653,12 @@ const value = response || "No response";
 //another example
 return x > y && x;
 ```
+
+# meta-data
+
+- meta-data is a set of information about a program that is not part of the program itself.
+
+# blob
+
+- blob is a binary large object.
+- a binary large object is a file that is larger than the maximum size of a URL.

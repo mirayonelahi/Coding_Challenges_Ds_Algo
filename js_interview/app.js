@@ -301,16 +301,59 @@
 //   return Object.keys(obj).find((key) => obj[key] % 2 !== 0);
 // };
 
-const longestWord = (str) => {
-  let longestCount = -Infinity;
+// const longestWord = (str) => {
+//   let longestCount = -Infinity;
 
-  str = str.split(" ");
+//   str = str.split(" ");
 
-  for (let i of str) {
-    longestCount = Math.max(longestCount, i.length);
-  }
+//   for (let i of str) {
+//     longestCount = Math.max(longestCount, i.length);
+//   }
 
-  return longestCount;
-};
+//   return longestCount;
+// };
 
-console.log(longestWord("hi my name is mir Ayon Elahi"));
+// console.log(longestWord("hi my name is mir Ayon Elahi"));
+
+// const twoSum = (arr, target) => {
+//   let obj = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     const curr = arr[i];
+//     let diff = target - curr;
+
+//     if (obj[diff] !== undefined) {
+//       return `${obj[diff]} ${i} `;
+//     } else {
+//       obj[curr] = i;
+//     }
+//   }
+// };
+
+// console.log(twoSum([1, 4, 5, 2], 3));
+
+// const arr1 = [2, 4, 6, 8];
+// const arr2 = [3, 9, 27];
+// const arr3 = [1, 4, 6, 12];
+
+// //given array is it arithmetic,geometric or none
+// const checkMathSequence = (arr) => {
+//   let arithCounter = arr[1] - arr[0];
+//   let geometricCounter = Math.sqrt(arr[1]);
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] - arr[i - 1] !== arithCounter) {
+//       arithCounter = false;
+//     }
+//     if (arr[i - 1] * geometricCounter !== arr[i]) {
+//       geometricCounter = false;
+//     }
+//   }
+
+//   if (!arithCounter && !geometricCounter) return "none";
+
+//   if (arithCounter) return "arithCounter";
+//   if (geometricCounter) return "geometricCounter";
+// };
+
+// console.log(checkMathSequence(arr3));
